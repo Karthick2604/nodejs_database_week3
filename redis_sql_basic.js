@@ -29,7 +29,7 @@ async function getResponse(request,response){
   try{
   const id=request.params.id;
   console.log(id);
-  let sqlQuery = "select * from student where id='"+id+"'";
+  let sqlQuery = "select id,name,age,salary,address from employee where id='"+id+"'";
   console.log('sqlQuery => ',sqlQuery)
   await Connection.query(sqlQuery,function(err,result){
   if(err) throw err;
